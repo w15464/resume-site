@@ -1,65 +1,78 @@
-import Image from "next/image";
-
 export default function Home() {
+  const projects = [
+    {
+      title: "项目 1：XXX",
+      desc: "我做了什么 + 解决了什么问题 + 结果（用一句话讲清楚）",
+      link: "https://github.com/yourname/xxx",
+      tech: ["Next.js", "TypeScript", "PostgreSQL"],
+    },
+    {
+      title: "项目 2：XXX",
+      desc: "一句话价值描述（最好带可量化结果）",
+      link: "https://demo.com",
+      tech: ["React", "Node.js"],
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="mx-auto max-w-3xl px-6 py-14">
+      <header className="space-y-3">
+        <h1 className="text-4xl font-bold tracking-tight">Wang</h1>
+        <p className="text-lg text-gray-600">
+          全栈 / 数据 / AI 工程方向。这里是我的简历与作品集。
+        </p>
+
+        <div className="flex flex-wrap gap-3 text-sm">
+          <a className="underline" href="mailto:yourname@example.com">Email</a>
+          <a className="underline" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
+          <a className="underline" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      <section className="mt-10">
+        <h2 className="text-xl font-semibold">技能</h2>
+        <p className="mt-3 text-gray-700 leading-relaxed">
+          Java / Spring Boot（若有） · Next.js · Node.js · SQL · 数据分析/爬虫（若有） · Linux/WSL
+        </p>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-xl font-semibold">项目</h2>
+        <div className="mt-4 space-y-4">
+          {projects.map((p) => (
+            <article key={p.title} className="rounded-2xl border p-5 shadow-sm">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-lg font-semibold">{p.title}</h3>
+                {p.link && (
+                  <a className="text-sm underline" href={p.link} target="_blank" rel="noreferrer">
+                    Link
+                  </a>
+                )}
+              </div>
+              <p className="mt-2 text-gray-700">{p.desc}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {p.tech.map((t) => (
+                  <span key={t} className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-xl font-semibold">经历</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700">
+          <li>经历条目 1：你做了什么、产出是什么</li>
+          <li>经历条目 2：你负责什么、体现能力点</li>
+        </ul>
+      </section>
+
+      <footer className="mt-14 text-sm text-gray-500">
+        © {new Date().getFullYear()} Wang · Built with Next.js
+      </footer>
+    </main>
   );
 }
