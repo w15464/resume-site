@@ -1,6 +1,7 @@
 如何替换占位 resume.pdf
 
 步骤：
+
 1. 在本地生成或准备好你的 PDF 简历（例如 resume-final.pdf）。
 2. 将文件重命名为 resume.pdf。
 3. 将文件复制到项目的 `public/` 目录：
