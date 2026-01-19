@@ -29,6 +29,7 @@ export default function Home() {
               查看 GitHub
             </a>
           </div>
+<p className="text-xs text-white/50 mt-6">BUILD: ede1440</p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
             <div className="rounded-lg border border-white/6 p-4">📧 2833574432@qq.com</div>
