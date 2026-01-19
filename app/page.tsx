@@ -1,77 +1,102 @@
 export default function Home() {
   const projects = [
     {
-      title: "项目 1：XXX",
-      desc: "我做了什么 + 解决了什么问题 + 结果（用一句话讲清楚）",
-      link: "https://github.com/yourname/xxx",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
-    },
-    {
-      title: "项目 2：XXX",
-      desc: "一句话价值描述（最好带可量化结果）",
-      link: "https://demo.com",
-      tech: ["React", "Node.js"],
+      title: "个人简历站 / 作品集网站",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "GitHub", "Vercel"],
+      content: [
+        "从 0 搭建 Web 项目结构，配置本地开发环境",
+        "使用 Git 进行版本管理并推送至 GitHub",
+        "通过 Vercel 完成自动构建与公网部署",
+        "获得可访问的线上地址，用于项目展示",
+      ],
+      result: "成功完成从本地开发到公网部署的完整工程闭环",
     },
   ];
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-14">
+    <main className="mx-auto max-w-3xl px-6 py-14 text-gray-900">
+      {/* Header */}
       <header className="space-y-3">
-        <h1 className="text-4xl font-bold tracking-tight">Wang</h1>
-        <p className="text-lg text-gray-600">
-          全栈 / 数据 / AI 工程方向。这里是我的简历与作品集。
+        <h1 className="text-4xl font-bold tracking-tight">苍穹外面</h1>
+        <p className="text-lg text-gray-700">
+          后端工程方向 · 关注系统运行、部署与工程完整性
+        </p>
+        <p className="text-gray-600">
+          具备从本地开发到公网部署的完整项目实践经验，熟悉 Linux / Node.js /
+          Web 工程基本流程。
         </p>
 
-        <div className="flex flex-wrap gap-3 text-sm">
-          <a className="underline" href="mailto:yourname@example.com">Email</a>
-          <a className="underline" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="underline" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
+        <div className="flex flex-wrap gap-4 text-sm">
+          <span>📧 2833574432@qq.com</span>
+          <a
+            href="https://github.com/w15464"
+            target="_blank"
+            rel="noreferrer"
+            className="underline"
+          >
+            GitHub
+          </a>
         </div>
       </header>
 
-      <section className="mt-10">
-        <h2 className="text-xl font-semibold">技能</h2>
-        <p className="mt-3 text-gray-700 leading-relaxed">
-          Java / Spring Boot（若有） · Next.js · Node.js · SQL · 数据分析/爬虫（若有） · Linux/WSL
-        </p>
-      </section>
-
-      <section className="mt-10">
-        <h2 className="text-xl font-semibold">项目</h2>
-        <div className="mt-4 space-y-4">
-          {projects.map((p) => (
-            <article key={p.title} className="rounded-2xl border p-5 shadow-sm">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold">{p.title}</h3>
-                {p.link && (
-                  <a className="text-sm underline" href={p.link} target="_blank" rel="noreferrer">
-                    Link
-                  </a>
-                )}
-              </div>
-              <p className="mt-2 text-gray-700">{p.desc}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {p.tech.map((t) => (
-                  <span key={t} className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-10">
-        <h2 className="text-xl font-semibold">经历</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700">
-          <li>经历条目 1：你做了什么、产出是什么</li>
-          <li>经历条目 2：你负责什么、体现能力点</li>
+      {/* Skills */}
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold">能力概览</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-700">
+          <li>能够在 Linux / WSL 环境中完成 Node.js 项目开发与运行</li>
+          <li>理解前后端分离、构建流程与部署流程</li>
+          <li>使用 Git / GitHub 进行版本管理与代码协作</li>
+          <li>具备基础的 Web 服务、接口与系统工程意识</li>
         </ul>
       </section>
 
-      <footer className="mt-14 text-sm text-gray-500">
-        © {new Date().getFullYear()} Wang · Built with Next.js
+      {/* Projects */}
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold">项目经历</h2>
+
+        {projects.map((p) => (
+          <div
+            key={p.title}
+            className="mt-6 rounded-2xl border border-gray-200 p-6"
+          >
+            <h3 className="text-lg font-semibold">{p.title}</h3>
+
+            <div className="mt-2 flex flex-wrap gap-2">
+              {p.tech.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full bg-gray-100 px-3 py-1 text-xs"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-700">
+              {p.content.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+
+            <p className="mt-4 text-sm text-gray-600">
+              <strong>结果：</strong>
+              {p.result}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      {/* Current */}
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold">当前状态</h2>
+        <p className="mt-3 text-gray-700 leading-relaxed">
+          正在继续深入后端方向，计划补充数据库（PostgreSQL）、接口设计与后台
+          CRUD 项目，逐步完善完整后端系统能力。
+        </p>
+      </section>
+
+      <footer className="mt-16 text-sm text-gray-500">
+        © {new Date().getFullYear()} 苍穹外面 · Built with Next.js
       </footer>
     </main>
   );
