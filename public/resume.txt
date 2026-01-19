@@ -1,0 +1,20 @@
+苍穹外卖 - 个人简历
+
+职业定位：后端工程师 / 系统与部署方向
+
+技能：
+- 语言：JavaScript/TypeScript, Python, C++
+- 后端：Node.js, Express, FastAPI
+- 数据库：PostgreSQL, Redis
+- 部署：Docker, GitHub Actions, Vercel
+- 工具：Git, Linux, Nginx
+
+项目经验：
+1) 个人简历站：使用 Next.js 构建，配置 CI/CD 并部署到 Vercel。
+2) 后端服务：数据库建模、接口设计、容器化部署、基础监控。
+
+联系方式：
+Email: 2833574432@qq.com
+GitHub: https://github.com/w15464
+
+（此为纯文本简历示例，若需要 PDF 我可以生成并放到 public/resume.pdf）
